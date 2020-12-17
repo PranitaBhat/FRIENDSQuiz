@@ -63,3 +63,86 @@ var questions = [
     answer : "AMY"
   }
 ];
+
+var score = 0;
+
+var highScore = [
+  {
+    name : "Shashank",
+    score : 10,
+  },
+  {
+    name : "Nishanth",
+    score : 7,
+  },
+  {
+    name : "Varun",
+    score : 9,
+  }
+];
+
+function play(ques, ans)
+{
+  if (ans.toUpperCase() === questions[i].answer){
+    var result = "YAY!";
+    score = score+1;
+  }
+  else{
+    var result = "NAY!";
+  }
+return result;
+}
+
+for (var i=0;i<questions.length;i++)
+{
+  switch(i)
+  {
+    case 0:
+    console.log("You're at Level 1. All the best!");
+    console.log("********************************");
+    break;
+
+    case 5:
+    console.log("You're now at Level 2. Keep going!");
+    console.log("********************************");        
+    break;
+
+    case 8:
+    console.log("Almost there! Level 3!!!");
+    console.log("********************************");
+    break;
+  }
+  var userAnswer = readlineSync.question(questions[i].question);
+  var result = play (questions[i].question, userAnswer);
+  console.log (result);
+  console.log ("Your current score is ",score);
+  console.log ("--------------------------");
+}
+
+console.log("*********************************");
+console.log("*********************************");
+console.log("*********************************");
+console.log("Your final score is -----> ", score);
+console.log("Here are the top FRIENDS fans : ");
+for (var j=0; j<highScore.length; j++)
+{
+  console.log(highScore[j].name + " : " + highScore[j].score);
+}
+console.log("*********************************");
+console.log("*********************************");
+console.log("*********************************");
+
+if(score>6)
+{
+  console.log("Congratulations! You breathe FRIENDS!");
+
+  console.log("If your final score matches or is better than these high scores, send me a screenshot of your result and I will update it here!");
+  console.log("Thank you for playing my quiz!!!");
+  console.log("<3 <3 <3");
+}
+else
+{
+  console.log("Well tried! But you can do better!");
+  console.log("Thank you for playing my quiz!!!");
+  console.log("<3 <3 <3");
+}
